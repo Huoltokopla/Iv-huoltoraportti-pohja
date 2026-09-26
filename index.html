@@ -1,4 +1,12 @@
-<!doctype html><html lang="fi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ilmanvaihtojärjestelmän huoltoraportti</title><style>
+<!doctype html><html lang="fi"><head>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="./icons/favicon.png">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="IV-Huolto">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ilmanvaihtojärjestelmän huoltoraportti</title><style>
 *{box-sizing:border-box}body{font-family:Arial,sans-serif;margin:0;background:#edf2f5;color:#17212b}.page{max-width:1050px;margin:20px auto;background:#fff;padding:26px;position:relative;overflow:hidden;box-shadow:0 2px 12px #0002}.page>*:not(.wm){position:relative;z-index:1}.wm{position:fixed;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);width:96vw;height:96vh;object-fit:contain;opacity:.10;mix-blend-mode:multiply;pointer-events:none}.brand,.title{text-align:center}.brand{font-size:27px;font-weight:700;margin-bottom:5px}.title{font-size:24px;margin:0 0 20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}label.h{font-weight:700;display:block;margin-bottom:4px}input,select,textarea{font:inherit}.field>input,.field>select,textarea{width:100%;padding:8px;border:1px solid #aeb7bf;border-radius:4px;background:#fff9}table{width:100%;border-collapse:collapse;margin-top:20px;background:#fff7}th,td{border:1px solid #69747c;padding:6px}th{background:#ffd966;color:#111}td:first-child{width:35%}.status{width:22%;text-align:center;white-space:nowrap}.status label{margin:0 7px}.note{width:100%;border:0;background:#fff8;padding:5px}.extra{margin-top:18px}textarea{min-height:120px;resize:vertical}.no-print{}.actions,.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}button,.button{border:0;border-radius:5px;background:#1967a3;color:white;padding:9px 13px;cursor:pointer}.danger{background:#a32929}.chip{background:#edf3f7;color:#223;border:1px solid #bbc7cf;border-radius:12px;padding:3px 8px;font-size:12px}.images{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.pic{position:relative;width:220px}.pic img{width:100%;max-height:180px;object-fit:contain;border:1px solid #bbb}.pic button{position:absolute;right:4px;top:4px}@media(max-width:700px){.grid{grid-template-columns:1fr}.page{margin:0;padding:14px}}@media print{@page{size:A4;margin:8mm}html,body{margin:0!important;padding:0!important;background:#fff}.page{max-width:none;margin:0;padding:0;box-shadow:none;overflow:visible}.no-print{display:none!important}.wm{position:fixed;width:96vw;height:96vh;opacity:.10}input,select,textarea{border:0!important;background:transparent!important}table{font-size:10px;background:transparent}th{background:#ffd966!important;color:#111!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 <style id="exact-watermark">
@@ -262,4 +270,12 @@ const N=29,K='ivHKreport5',H='ivHKhistory5',P='ivHKperformers5';let pics=[];cons
  window.addEventListener('beforeprint',()=>{document.querySelectorAll('.image-caption').forEach(ta=>{const i=Number(ta.dataset.index);updateCaption(i,ta.value,ta)})});
  window.addEventListener('load',()=>setTimeout(renderCaptioned,100));
 })();
-</script></body></html>
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./service-worker.js').catch(function (err) { console.warn('Service worker:', err); });
+  });
+}
+</script>
+</body></html>
