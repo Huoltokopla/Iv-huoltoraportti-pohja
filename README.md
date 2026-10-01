@@ -1,9 +1,13 @@
 # IV-Huoltoraportti
-GitHub Pages -valmis PWA.
 
-## Muokattava raportti
-- Vie raportti tallentaa nykyisen raportin `.ivraportti`-tiedostoksi.
-- Tuo raportti avaa samalla sovelluksella viedyn `.ivraportti`-tiedoston takaisin muokattavaksi.
-- PDF-tallennus toimii entiseen tapaan erillisenä lopullisena tulosteena.
+GitHub Pages -paketti Huoltokopla Oy:n IV-huoltoraportille.
 
-ZIP-paketin sisältö ladataan GitHub-repositorion juureen.
+## Julkaisu
+Lataa tämän paketin sisältö GitHub-repositorion juureen.
+GitHub Pagesin julkaisulähteenä käytetään main-haaran juurta (`/`).
+
+## Microsoft-kirjautuminen
+Sovellus käyttää paikallista `msal-browser.min.js`-tiedostoa.
+Redirect URI: `https://huoltokopla.github.io/iv-huoltoraportti-pohja/`
+
+SharePoint-yhteyttä ei ole vielä lisätty tähän vaiheeseen.
